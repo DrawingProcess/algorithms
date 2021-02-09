@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Sort(Insertion).cpp">
+    <ClCompile Include="Lec08_02WILDCARD.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

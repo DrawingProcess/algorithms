@@ -19,13 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Sort(Insertion).cpp" />
+    <ClCompile Include="Lec08_02WILDCARD.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{3d7fab8c-12ff-438b-a11c-12dc54603826}</ProjectGuid>
-    <RootNamespace>AlgorithmArrangement</RootNamespace>
+    <ProjectGuid>{faeb3046-1b1e-43b7-be81-ece171f7fef5}</ProjectGuid>
+    <RootNamespace>Lec08DynamicProgramming</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
