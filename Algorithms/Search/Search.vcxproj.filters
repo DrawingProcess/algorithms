@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Search(Queue).cpp">
+    <ClCompile Include="Search(DepthFirstSearch).cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
