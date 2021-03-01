@@ -46,7 +46,7 @@ int main() {
 			nodes[i / 2].leftChild = &nodes[i];
 		else
 			nodes[i / 2].rightChild = &nodes[i];
-	}
+	} 
 	cout << "Preorder: ";
 	preorder(&nodes[1]);
 	cout << "\nInorder: ";
