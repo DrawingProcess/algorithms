@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Search(DepthFirstSearch).cpp">
+    <ClCompile Include="Search(Traversal).cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
