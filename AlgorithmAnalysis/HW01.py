@@ -21,36 +21,31 @@ def mergeSort(lst):
     left = lst[:mid]
     right = lst[mid:]
 
-    left1 = mergeSort(left)
-    right1 = mergeSort(right)
-    return merge(left1, right1)
+    left = mergeSort(left)
+    right = mergeSort(right)
+    return merge(left, right)
 
 def merge(left, right):
-    i = 0
-    j = 0
-    sort_lst = []
-
-    while(i<len(left)) & (j<len(right)):
-        if left[i] < right[i]:
-            sort_lst.append(left[i])
-            i+=1
-        else:
-            sort_lst.append(right[j])
-            j+=1
-
-    while (i<len(left)):
-        sort_lst.append(left[i])
-        i+=1
-
-    while(j<len(right)):
-        sort_lst.append(right[j])
-        j+=1
-
-    return sort_lst
+    result = []
+    while len(left) > 0 or len(right) > 0:
+        if len(left) > 0 and len(right) > 0:
+            if left[0] <= right[0]:
+                result.append(left[0])
+                left = left[1:]
+            else:
+                result.append(right[0])
+                right = right[1:]
+        elif len(left) > 0:
+            result.append(left[0])
+            left = left[1:]
+        elif len(right) > 0:
+            result.append(right[0])
+            right = right[1:]
+    return result
 
 # (1) n개의 데이타를 random으로 생성
 # (3) n=2,000, 4,000, 12,000에 대해 알고리즘 A, B가 종료될 때까지의 시간을 측정한다.
-num = [2000, 4000, 12000]
+num = [2000, 4000, 37000]
 for n in num:
     dataA = [random.randrange(1, 101) for i in range(n)]
     dataB = [random.randrange(1, 101) for i in range(n)]
@@ -66,4 +61,4 @@ for n in num:
     Btime = Ltime - Stime
     
     print(f'{Atime:10.5f} {Btime:10.5f}')
-    print(time.strftime('%S', time.localtime(Atime)))
+    print(time.strftime('%M-%S', time.localtime(Atime)))
