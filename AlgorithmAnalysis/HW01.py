@@ -45,7 +45,7 @@ def merge(left, right):
 
 # (1) n개의 데이타를 random으로 생성
 # (3) n=2,000, 4,000, 12,000에 대해 알고리즘 A, B가 종료될 때까지의 시간을 측정한다.
-num = [2000, 4000, 37000]
+num = [2000, 4000, 12000, 37000]
 for n in num:
     dataA = [random.randrange(1, 101) for i in range(n)]
     dataB = [random.randrange(1, 101) for i in range(n)]

@@ -1,6 +1,7 @@
 import random
+import time
 
-def mergeSort(lst):
+def mergeSortA(lst):
     if len(lst) <= 1:
         return lst
 
@@ -8,32 +9,9 @@ def mergeSort(lst):
     left = lst[:mid]
     right = lst[mid:]
 
-    left1 = mergeSort(left)
-    right1 = mergeSort(right)
+    left1 = mergeSortA(left)
+    right1 = mergeSortA(right)
     return merge(left1, right1)
-
-def merge(left, right):
-    i = 0
-    j = 0
-    result = []
-
-    while(i < len(left)) & (j < len(right)):
-        if left[i] < right[i]:
-            result.append(left[i])
-            i += 1
-        else:
-            result.append(right[j])
-            j += 1
-
-    while (i < len(left)):
-        result.append(left[i])
-        i += 1
-
-    while(j < len(right)):
-        result.append(right[j])
-        j += 1
-
-    return result
 
 def merge(left, right):
     result = []
@@ -53,12 +31,48 @@ def merge(left, right):
             right = right[1:]
     return result
 
-n = 10
-data = [random.randrange(1, 101) for i in range(n)]
+def mergeSortB(a):
+    n = len(a)
+    if n <= 1:
+        return
 
-for i in range(n):
-    print(data[i])
-print(" ")
-data = mergeSort(data)
-for i in range(n):
-    print(data[i])
+    mid = n // 2
+    g1 = a[:mid]
+    g2 = a[mid:]
+    mergeSortB(g1)
+    mergeSortB(g2)
+
+    i1 = 0
+    i2 = 0
+    ia = 0
+    while i1 < len(g1) and i2 < len(g2):
+        if g1[i1] > g2[i2]: # 부등호 방향 뒤집기
+            a[ia] = g1[i1]
+            i1 += 1
+            ia += 1
+        else:
+            a[ia] = g2[i2]
+            i2 += 1
+            ia += 1
+    while i1 < len(g1):
+        a[ia] = g1[i1]
+        i1 += 1
+        ia += 1
+    while i2 < len(g2):
+        a[ia] = g2[i2]
+        i2 += 1
+        ia += 1
+
+numList = [2000, 4000, 12000, 37000]
+for n in numList:    
+    dataA = [random.randrange(1, 100) for i in range(n)]
+    dataB = [random.randrange(1, 100) for i in range(n)]
+    stime = time.time()
+    mergeSortA(dataA)
+    nTime = time.time()
+    print(nTime - stime)
+
+    stime = time.time()
+    mergeSortB(dataB)
+    nTime = time.time()
+    print(nTime - stime)
