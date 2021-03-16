@@ -49,11 +49,10 @@ def mergeSortB(a):
         if g1[i1] > g2[i2]: # 부등호 방향 뒤집기
             a[ia] = g1[i1]
             i1 += 1
-            ia += 1
         else:
             a[ia] = g2[i2]
             i2 += 1
-            ia += 1
+        ia += 1
     while i1 < len(g1):
         a[ia] = g1[i1]
         i1 += 1
@@ -64,7 +63,7 @@ def mergeSortB(a):
         ia += 1
 
 numList = [2000, 4000, 12000, 37000]
-for n in numList:    
+for n in numList:
     dataA = [random.randrange(1, 100) for i in range(n)]
     dataB = [random.randrange(1, 100) for i in range(n)]
     stime = time.time()
