@@ -1,5 +1,6 @@
 import random
 import time
+import matplotlib.pyplot as plt
 
 # (2)-(A) O(n^2) 인 exchange sort 알고리즘을 구현
 def exchangeSort(lst):
@@ -45,20 +46,68 @@ def merge(left, right):
 
 # (1) n개의 데이타를 random으로 생성
 # (3) n=2,000, 4,000, 12,000에 대해 알고리즘 A, B가 종료될 때까지의 시간을 측정한다.
-num = [2000, 4000, 12000, 37000]
-for n in num:
+
+# num = [2000, 4000, 12000, 37000]
+# for n in num:
+#     dataA = [random.randrange(1, 101) for i in range(n)]
+#     dataB = [random.randrange(1, 101) for i in range(n)]
+
+#     Stime = time.time()
+#     exchangeSort(dataA)
+#     Ltime = time.time()
+#     Atime = Ltime - Stime
+
+#     Stime = time.time()
+#     mergeSort(dataB)
+#     Ltime = time.time()
+#     Btime = Ltime - Stime
+#     print(f'{Atime:10.5f} {Btime:10.5f}')
+#     print(time.strftime('%M-%S', time.localtime(Atime)))
+#     print(time.strftime('%M-%S', time.localtime(Btime)))
+
+At = []
+countA = 0
+while True:
+    n = countA * 1000
     dataA = [random.randrange(1, 101) for i in range(n)]
-    dataB = [random.randrange(1, 101) for i in range(n)]
 
     Stime = time.time()
     exchangeSort(dataA)
     Ltime = time.time()
     Atime = Ltime - Stime
 
+    At.append(Atime)
+    countA = countA + 1
+    print(f'{Atime:10.5f}')
+    print(time.strftime('%M-%S', time.localtime(Atime)))
+    if Atime > 60:
+        break
+
+Bt = []
+countB = 0
+while True:
+    n = countB * 10000
+    dataB = [random.randrange(1, 101) for i in range(n)]
+
     Stime = time.time()
     mergeSort(dataB)
     Ltime = time.time()
     Btime = Ltime - Stime
-    
-    print(f'{Atime:10.5f} {Btime:10.5f}')
-    print(time.strftime('%M-%S', time.localtime(Atime)))
+
+    Bt.append(Btime)
+    countB = countB + 1
+    print(f'{Btime:10.5f}')
+    print(time.strftime('%M-%S', time.localtime(Btime)))
+    if Btime > 60:
+        break
+
+Ax = []
+for i in countA:
+    Ax.append(i * 1000)
+Bx = []
+for i in countB:
+    Bx.append(i * 10000)
+plt.plot(Ax, At, 'r--', Bx, Bt, 'bs')
+plt.xlabel('Number of Data')
+plt.ylabel('Time')
+plt.show()
