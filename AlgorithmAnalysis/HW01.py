@@ -47,7 +47,7 @@ def merge(left, right):
 # (1) n개의 데이타를 random으로 생성
 # (3) n=2,000, 4,000, 12,000에 대해 알고리즘 A, B가 종료될 때까지의 시간을 측정한다.
 
-# num = [2000, 4000, 12000, 37000]
+# num = [2000, 4000, 12000]
 # for n in num:
 #     dataA = [random.randrange(1, 101) for i in range(n)]
 #     dataB = [random.randrange(1, 101) for i in range(n)]
@@ -65,6 +65,7 @@ def merge(left, right):
 #     print(time.strftime('%M-%S', time.localtime(Atime)))
 #     print(time.strftime('%M-%S', time.localtime(Btime)))
 
+# (4) A, B 를 1분간 수행할 때 해결할 수 있는 문제의 크기
 At = []
 countA = 0
 while True:
@@ -102,12 +103,13 @@ while True:
         break
 
 Ax = []
-for i in countA:
+for i in range(countA):
     Ax.append(i * 1000)
 Bx = []
-for i in countB:
+for i in range(countB):
     Bx.append(i * 10000)
 plt.plot(Ax, At, 'r--', Bx, Bt, 'bs')
 plt.xlabel('Number of Data')
 plt.ylabel('Time')
 plt.show()
+plt.savefig('./SortingTime_limit60.png')
