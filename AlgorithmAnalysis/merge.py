@@ -1,7 +1,7 @@
 import random
 import time
 
-# i) first method
+# i) first method - Ascending order
 def mergeSortA(lst):
     if len(lst) <= 1:
         return lst
@@ -28,7 +28,7 @@ def merge(left, right):
     if j == len(right): result += left[i:len(left)]
     return result
 
-# ii) second method
+# ii) second method - Descending order
 def mergeSortB(a):
     n = len(a)
     if n <= 1:
@@ -60,6 +60,23 @@ def mergeSortB(a):
         i2 += 1
         ia += 1
 
+# Sorting - First & Second Method
+n = 10
+data = [random.randrange(1, 101) for i in range(n)]
+for i in range(n):
+    print(data[i])
+print(" ")
+
+dataA = mergeSortA(data)
+for i in range(n):
+    print(dataA[i]) 
+print(" ")
+mergeSortB(data)
+for i in range(n):
+    print(data[i]) 
+print(" ")
+
+# Time Measurement - First & Second Method
 numList = [2000, 4000, 12000, 37000]
 for n in numList:
     dataA = [random.randrange(1, 100) for i in range(n)]
