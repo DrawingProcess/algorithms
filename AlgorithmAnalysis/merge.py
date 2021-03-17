@@ -1,6 +1,7 @@
 import random
 import time
 
+# i) first method
 def mergeSortA(lst):
     if len(lst) <= 1:
         return lst
@@ -9,28 +10,25 @@ def mergeSortA(lst):
     left = lst[:mid]
     right = lst[mid:]
 
-    left1 = mergeSortA(left)
-    right1 = mergeSortA(right)
-    return merge(left1, right1)
+    left = mergeSortA(left)
+    right = mergeSortA(right)
+    return merge(left, right)
 
 def merge(left, right):
     result = []
-    while len(left) > 0 or len(right) > 0:
-        if len(left) > 0 and len(right) > 0:
-            if left[0] <= right[0]:
-                result.append(left[0])
-                left = left[1:]
-            else:
-                result.append(right[0])
-                right = right[1:]
-        elif len(left) > 0:
-            result.append(left[0])
-            left = left[1:]
-        elif len(right) > 0:
-            result.append(right[0])
-            right = right[1:]
+    i = 0; j = 0
+    while( i < len(left) and j < len(right)):
+        if left[i] <= right[j]:
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+    if i == len(left): result += right[j:len(right)]
+    if j == len(right): result += left[i:len(left)]
     return result
 
+# ii) second method
 def mergeSortB(a):
     n = len(a)
     if n <= 1:
@@ -75,3 +73,22 @@ for n in numList:
     mergeSortB(dataB)
     nTime = time.time()
     print(nTime - stime)
+
+# inefficient merge method
+# def merge(left, right):
+#     result = []
+#     while len(left) > 0 or len(right) > 0:
+#         if len(left) > 0 and len(right) > 0:
+#             if left[0] <= right[0]:
+#                 result.append(left[0])
+#                 left = left[1:]
+#             else:
+#                 result.append(right[0])
+#                 right = right[1:]
+#         elif len(left) > 0:
+#             result.append(left[0])
+#             left = left[1:]
+#         elif len(right) > 0:
+#             result.append(right[0])
+#             right = right[1:]
+#     return result

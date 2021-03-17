@@ -28,42 +28,37 @@ def mergeSort(lst):
 
 def merge(left, right):
     result = []
-    while len(left) > 0 or len(right) > 0:
-        if len(left) > 0 and len(right) > 0:
-            if left[0] <= right[0]:
-                result.append(left[0])
-                left = left[1:]
-            else:
-                result.append(right[0])
-                right = right[1:]
-        elif len(left) > 0:
-            result.append(left[0])
-            left = left[1:]
-        elif len(right) > 0:
-            result.append(right[0])
-            right = right[1:]
+    i = 0; j = 0
+    while( i < len(left) and j < len(right)):
+        if left[i] <= right[j]:
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+    if i == len(left): result += right[j:len(right)]
+    if j == len(right): result += left[i:len(left)]
     return result
 
 # (1) n개의 데이타를 random으로 생성
 # (3) n=2,000, 4,000, 12,000에 대해 알고리즘 A, B가 종료될 때까지의 시간을 측정한다.
+num = [2000, 4000, 12000]
+for n in num:
+    dataA = [random.randrange(1, 101) for i in range(n)]
+    dataB = [random.randrange(1, 101) for i in range(n)]
 
-# num = [2000, 4000, 12000]
-# for n in num:
-#     dataA = [random.randrange(1, 101) for i in range(n)]
-#     dataB = [random.randrange(1, 101) for i in range(n)]
+    Stime = time.time()
+    exchangeSort(dataA)
+    Ltime = time.time()
+    Atime = Ltime - Stime
 
-#     Stime = time.time()
-#     exchangeSort(dataA)
-#     Ltime = time.time()
-#     Atime = Ltime - Stime
-
-#     Stime = time.time()
-#     mergeSort(dataB)
-#     Ltime = time.time()
-#     Btime = Ltime - Stime
-#     print(f'{Atime:10.5f} {Btime:10.5f}')
-#     print(time.strftime('%M-%S', time.localtime(Atime)))
-#     print(time.strftime('%M-%S', time.localtime(Btime)))
+    Stime = time.time()
+    mergeSort(dataB)
+    Ltime = time.time()
+    Btime = Ltime - Stime
+    print(f'{Atime:10.5f} {Btime:10.5f}')
+    print(time.strftime('%M-%S', time.localtime(Atime)))
+    print(time.strftime('%M-%S', time.localtime(Btime)))
 
 # (4) A, B 를 1분간 수행할 때 해결할 수 있는 문제의 크기
 At = []
