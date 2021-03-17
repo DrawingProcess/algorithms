@@ -57,8 +57,6 @@ for n in num:
     Ltime = time.time()
     Btime = Ltime - Stime
     print(f'{Atime:10.5f} {Btime:10.5f}')
-    print(time.strftime('%M-%S', time.localtime(Atime)))
-    print(time.strftime('%M-%S', time.localtime(Btime)))
 
 # (4) A, B 를 1분간 수행할 때 해결할 수 있는 문제의 크기
 At = []
@@ -74,7 +72,7 @@ while True:
 
     At.append(Atime)
     countA = countA + 1
-    print(f'{Atime:10.5f}')
+    print(f'{countA:2d} {Atime:10.5f}')
     print(time.strftime('%M-%S', time.localtime(Atime)))
     if Atime > 60:
         break
@@ -82,7 +80,7 @@ while True:
 Bt = []
 countB = 0
 while True:
-    n = countB * 10000
+    n = countB * 30000
     dataB = [random.randrange(1, 101) for i in range(n)]
 
     Stime = time.time()
@@ -92,7 +90,7 @@ while True:
 
     Bt.append(Btime)
     countB = countB + 1
-    print(f'{Btime:10.5f}')
+    print(f'{countB:2d} {Btime:10.5f}')
     print(time.strftime('%M-%S', time.localtime(Btime)))
     if Btime > 60:
         break
