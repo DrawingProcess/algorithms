@@ -28,6 +28,10 @@ def merge(mid, high, left, right, S):
         j += 1
         k += 1
 
+s = [3,5,2,9,10,14,4,8]
+mergeSort(8, s)
+print(s)
+
 def mergeSort2 (S, low, high):
     if (low < high):
         mid = (low + high) // 2
@@ -36,30 +40,23 @@ def mergeSort2 (S, low, high):
         merge2(S, low, mid, high)
 
 def merge2(S, low, mid, high):
-    U = [0 for i in range(high - low + 1)]
     i = low; j = mid+1; k = low
-    while (i < mid and j < high):
-        if (S[i] < S[j]):
+    U = S[:]
+    while(i <= mid and j <= high):
+        if(S[i] < S[j]):
             U[k] = S[i]
             i += 1
         else:
             U[k] = S[j]
             j += 1
         k += 1
-    print(U)
-    while i < mid:
-        U[k] = S[i]
-        i += 1
-        k += 1
-    while j < high:
-        U[k] = S[j]
-        j += 1
-        k += 1
-    S = U[:]
 
-s = [3,5,2,9,10,14,4,8]
-mergeSort(8, s)
-print(s)
+    if(i > mid):
+        U[k:high+1] = S[j:high+1]
+    else:
+        U[k:high+1] = S[i:mid+1]
+    S[low:high+1] = U[low:high+1]
+
 s = [3,5,2,9,10,14,4,8]
 mergeSort2(s, 0, 7)
 print(s)
