@@ -56,6 +56,7 @@ for n in num:
     mergeSort(dataB)
     Ltime = time.time()
     Btime = Ltime - Stime
+    print(f'{}')
     print(f'{Atime:10.5f} {Btime:10.5f}')
 
 # (4) A, B 를 1분간 수행할 때 해결할 수 있는 문제의 크기
