@@ -104,3 +104,14 @@ print(">> Max Num of Save Space")
 print(num2.max, num2.result_str)
 
 # Validation List [3,16,13,1 ,9,2,7,5, 8,4,11,6, 15,14,10,12]
+
+print("-----------------------------------------")
+s = [3,16,13,1 ,9,2,7,5, 8,4,11,6, 15,14,10,12]
+mergeSort(16, s)
+print(">> Validation Sort List using mergeSort")
+print(s)
+
+s = [3,16,13,1 ,9,2,7,5, 8,4,11,6, 15,14,10,12]
+mergeSort2(s, 0, 15)
+print(">> Validation Sort List using mergeSort2")
+print(s)
