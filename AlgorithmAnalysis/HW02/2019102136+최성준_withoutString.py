@@ -1,21 +1,14 @@
-import sys
-
 class space:
     def __init__(self):
         self.result = 0
         self.max = -1
-        self.result_str = ""
-        self.string = "0"
     def add(self,num):
         self.result += len(num)
-        self.string += " + " + str(len(num))
     def sub(self,num):
         self.result -= len(num)
-        self.string += " + " + str(len(num))
     def maximum(self):
         if self.result > self.max:
             self.max = self.result
-            self.result_str = "= " + self.string
 
 def mergeSort (n, S):
     mid = n // 2; high = n - mid
@@ -63,7 +56,7 @@ print(">> Sort List using mergeSort")
 print(s)
 
 print(">> Max Num of Save Space")
-print(num.max, num.result_str)
+print(num.max)
 
 def mergeSort2 (S, low, high):
     if (low < high):
@@ -101,7 +94,7 @@ print(">> Sort List using mergeSort2")
 print(s)
 
 print(">> Max Num of Save Space")
-print(num2.max, num2.result_str)
+print(num2.max)
 
 # Validation List [3,16,13,1 ,9,2,7,5, 8,4,11,6, 15,14,10,12]
 
