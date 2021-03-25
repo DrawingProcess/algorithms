@@ -18,6 +18,6 @@ def fib2 (n):
   return f[n]
 
 for i in range(0, 10):
-  print(i, fib1(i))
+  print(i+1, fib1(i))
 for i in range(0, 10):
-  print(i, fib2(i))
+  print(i+1, fib2(i))
