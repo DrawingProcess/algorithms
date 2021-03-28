@@ -89,9 +89,18 @@ int main() {
 	for (int i = 0; i < n; i++)
 		cout << arr3[i] << " ";
 	cout << "\n";
+	cout << "\n";
 
-	vector<int> arr4 = { 2, 4, 6, 7, 5, 1, 3, 8, 9 };
+	vector<int> arr4 = { 1,2,3,4,5,6,7,8,9 };
+	random_shuffle(arr4.begin(), arr4.end());
+	for (int i = 0; i < n; i++)
+		cout << arr4[i] << " ";
+	cout << "\n";
 	sort(arr4.begin(), arr4.end());
+	for (int i = 0; i < n; i++)
+		cout << arr4[i] << " ";
+	cout << "\n";
+	reverse(arr4.begin(), arr4.end());
 	for (int i = 0; i < n; i++)
 		cout << arr4[i] << " ";
 	cout << "\n";
