@@ -1,6 +1,9 @@
 #include <iostream>
 using namespace std;
 
+#include <algorithm>
+#include <vector>
+
 // bubble sort
 void bubbleSort(int n, int* arr) {
 	for (int i = 0; i < n; i++) {
@@ -59,6 +62,11 @@ void mergeSort(int* arr, int start, int end) {
 	}
 }
 
+// algorithm sort for descending order
+bool comp(int a, int b) {
+	return a > b;
+}
+
 int main() {
 	// bubble sort
 	int arr[] = { 2, 4, 6, 7, 5, 1, 3, 8, 9 };
@@ -74,4 +82,18 @@ int main() {
 	for (int i = 0; i < n; i++)
 		cout << arr2[i] << " ";
 	cout << "\n";
+
+	// algorithm sort
+	int arr3[] = { 2, 4, 6, 7, 5, 1, 3, 8, 9 };
+	sort(arr3, arr3 + n, comp);
+	for (int i = 0; i < n; i++)
+		cout << arr3[i] << " ";
+	cout << "\n";
+
+	vector<int> arr4 = { 2, 4, 6, 7, 5, 1, 3, 8, 9 };
+	sort(arr4.begin(), arr4.end());
+	for (int i = 0; i < n; i++)
+		cout << arr4[i] << " ";
+	cout << "\n";
+
 }
