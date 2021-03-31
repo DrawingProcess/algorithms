@@ -12,6 +12,6 @@ def bs(data, item, low, high):
 
 data = [1,3,5,6,7,9,10,14,17,19]
 n = len(data)
-location=bs(data, 17, 0, n-1)
+location = bs(data, 17, 0, n-1)
 print(location)
 print(data[location])
