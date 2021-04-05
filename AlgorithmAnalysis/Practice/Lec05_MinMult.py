@@ -37,8 +37,14 @@ for diag in range(1, n):
 #     for diag in range(1, n):
 #         for i in range(1, n-diag+1):
 #             j = i + diag
-#             M[i][j] = min(M[i][k] + M[k+1][j] + d[i-1]*d[k]*d[j])
-#             P[i][j] = k # 최소치를 주는 k의 값
+#             M = 987654321
+#             for k in range(i, j):
+#                 temp = m[i][k] + m[k+1][j] + d[i-1]*d[k]*d[j]
+#                 if M > temp:
+#                     M = temp
+#                     P = k # 최소치를 주는 k의 값
+#             m[i][j] = M
+#             p[i][j] = P
 #     return M[1][n]
 
 utility.printMatrix(m)
