@@ -1,15 +1,21 @@
 from Lec05_Utility import *
 
 def allShortestPath(g,n):
-
-
-
-     구현
+   D = g[:]
+   P = [[0 for col in range(n)] for row in range(n)]
+   for k in range(0,n):
+      for i in range(0,n):
+         for j in range(0,n):
+            if D[i][k]+D[k][j] < D[i][j]:
+               D[i][j] = D[i][k]+D[k][j]
+               P[i][j] = k+1
+   return (D,P)
 
 def path(p, q, r):
-    if (p[q][r] !=0):
-         
-          구현
+   if (p[q-1][r-1] !=0):
+      path(p, q, p[q-1][r-1])
+      print('v{}'.format(p[q-1][r-1]), end=" ")
+      path(p, p[q-1][r-1], r)
 
 inf=1000
 g=[[0,1,inf, 1,5],

@@ -1,12 +1,20 @@
 def allShortestPath(g,n):
     # node number는 1부터 n
-    # 구현
+    D = g[:]
+    P = [[0 for col in range(n)] for row in range(n)]
+    for k in range(0,n):
+        for i in range(0,n):
+            for j in range(0,n):
+                if D[i][k]+D[k][j] < D[i][j]:
+                    D[i][j] = D[i][k]+D[k][j]
+                    P[i][j] = k+1
+    return (D,P)
 
 def printMatrix(d):
     n = len(d[0])
     for i in range(0,n):
         for j in range(0,n):
-            print(d[i][j],end=" ")
+            print(d[i][j], end=" ")
         print()
 
 inf = 1000
@@ -22,13 +30,13 @@ printMatrix(d)
 print()
 printMatrix(p) 
 
-# <<output>>
 # 0 1 1000 1 5 
 # 9 0 3 2 1000 
 # 1000 1000 0 4 1000 
 # 1000 1000 2 0 3 
 # 3 1000 1000 1000 0 
 
+# <<output>>
 # 0 1 3 1 4 
 # 8 0 3 2 5 
 # 10 11 0 4 7 
