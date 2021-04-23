@@ -23,6 +23,7 @@ for i in range(1,n):
     if w[0][i] != inf:
         start_length_update += 1
 
+current_length_update = 0
 # Dijkstra algorithm 구현
 for cnt in range(n):
     min_ = inf
@@ -36,6 +37,7 @@ for cnt in range(n):
         if (length[vnear] + w[vnear][i] < length[i]):
             length[i] = length[vnear] + w[vnear][i]
             touch[i] = vnear
+            current_length_update += 1
 
     # for save_length
     if length[vnear] != -1:
@@ -51,3 +53,5 @@ print(save_length)
 # for max_length_update
 max_length_update = total_edge_num - start_length_update
 print(max_length_update)
+# for current_length_update
+print(current_length_update)
