@@ -8,20 +8,14 @@ int solution(vector<vector<int>> board, vector<int> moves) {
     int answer = 0;
     vector<int> result;
     for (int i = 0; i < moves.size(); i++) {
-        bool pass = true;
         for (int j = 0; j < board.size(); j++) {
             if (board[j][moves[i] - 1] != 0) {
-                pass = false;
-                if (i == 0) {
-                    result.push_back(board[j][moves[i] - 1]);
-                }
-                else if (board[j][moves[i] - 1] == result[result.size() - 1]) {
+                if (result.size() != 0 && board[j][moves[i] - 1] == result[result.size() - 1]) {
                     result.pop_back();
                     answer += 2;
                 }
-                else {
+                else
                     result.push_back(board[j][moves[i] - 1]);
-                }
                 board[j][moves[i] - 1] = 0;
                 break;
             }
