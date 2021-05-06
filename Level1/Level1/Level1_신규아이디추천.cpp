@@ -37,7 +37,7 @@ string solution(string new_id) {
     // Vi)
     if (new_id.size() >= 16)
         new_id = new_id.substr(0, 15);
-    // iV)
+    // iV) for testcase 5
     while (new_id[0] == '.')
         new_id.erase(0, 1);
     while (new_id[new_id.size() - 1] == '.')
