@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Level1_실패율.cpp">
+    <ClCompile Include="Level1_삼진법뒤집기.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
