@@ -1,4 +1,4 @@
-import Lec06_Utility as utility
+import utility
 
 a=['A','A','C','A','G','T','T','A','C','C']
 b=['T','A','A','G','G','T','C','A']

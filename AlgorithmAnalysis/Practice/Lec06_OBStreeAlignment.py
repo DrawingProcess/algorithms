@@ -1,4 +1,4 @@
-import Lec06_Utility as utility
+import utility
 
 class Node:
     def __init__(self, data):

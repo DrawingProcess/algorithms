@@ -1,4 +1,4 @@
-import Lec05_Utility as utility
+import utility
 
 def order(p, i, j):
     if (i == j):

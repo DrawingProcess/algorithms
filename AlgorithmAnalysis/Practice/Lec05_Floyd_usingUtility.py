@@ -1,4 +1,4 @@
-from Lec05_Utility import *
+from utility import *
 
 def allShortestPath(g,n):
    D = g[:]

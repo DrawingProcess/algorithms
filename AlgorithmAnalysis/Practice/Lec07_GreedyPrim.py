@@ -1,4 +1,4 @@
-import Lec07_Utility as utility
+import utility
 
 inf = 1000
 w=[[0,  1,  3,inf, inf],
