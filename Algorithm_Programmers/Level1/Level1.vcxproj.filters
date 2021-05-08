@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Level1_제일작은수제거하기.cpp">
+    <ClCompile Include="Level1_최대공약수와최소공배수.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
