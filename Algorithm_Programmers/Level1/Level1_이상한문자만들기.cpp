@@ -1,26 +1,16 @@
 #include <iostream>
-#include <string>
-#include <vector>
 
 using namespace std;
-
-string solution(string s) {
-    string answer = "";
-    int cnt = 0;
-    for (int i = 0; i < s.size(); i++) {
-        if (s[i] == ' ') { cnt = 0; continue; }
-        if (cnt % 2 == 0 && islower(s[i])){ // È¦¼ö
-            s[i] -= 32;
-        }
-        else if (cnt % 2 == 1 && isupper(s[i])) { // Â¦¼ö
-            s[i] += 32;
-        }
-        cnt++;
+int solution(int n)
+{
+    int answer = 0;
+    while (n != 0) {
+        answer += n % 10;
+        n /= 10;
     }
-    answer = s;
     return answer;
 }
 int main() {
-    string s = " try hello world ";
-    cout << solution(s);
+    int N = 123;
+    cout << solution(N);
 }
