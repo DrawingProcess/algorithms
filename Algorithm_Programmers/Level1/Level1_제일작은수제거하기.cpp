@@ -23,4 +23,4 @@ int main() {
     vector<int> result = solution(arr);
     for (int i = 0; i < result.size(); i++)
         cout << result[i] << " ";
-}
+}s
