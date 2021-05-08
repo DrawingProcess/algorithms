@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Level2_124나라의숫자.cpp">
+    <ClCompile Include="Level2_문자열압축.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
