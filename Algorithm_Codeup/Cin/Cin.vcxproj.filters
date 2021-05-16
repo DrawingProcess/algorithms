@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Cin_String.cpp">
+    <ClCompile Include="Cin_ReverseDate.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
