@@ -5,8 +5,7 @@ int main() {
 	for (i = 1; i <= 10; i++)
 		for (j = 1; j <= 10; j++)
 			cin >> map[i][j];
-	while (map[x][y] != 2)
-	{
+	while (map[x][y] != 2) {
 		map[x][y] = 9;
 		if (map[x][y + 1] != 1) y += 1;
 		else if (map[x + 1][y] != 1) x += 1;
