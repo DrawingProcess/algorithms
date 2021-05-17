@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Total_RGB.cpp">
+    <ClCompile Include="Total_GCD.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
