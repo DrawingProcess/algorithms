@@ -18,10 +18,13 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="If_Switch.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{88D5F9EB-CCF0-4020-AD8A-29BBBCA74C72}</ProjectGuid>
-    <RootNamespace>Bit</RootNamespace>
+    <ProjectGuid>{82A10FFD-D3D4-44B8-B86B-CE910E762CEF}</ProjectGuid>
+    <RootNamespace>If</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
