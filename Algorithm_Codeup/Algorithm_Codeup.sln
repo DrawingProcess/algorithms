@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.1433
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31313.79
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Cout", "Cout\Cout.vcxproj", "{20A4141F-285B-40F8-B470-D2F854376F6D}"
 EndProject
@@ -26,6 +26,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Func", "Func\Func.vcxproj", "{2726410C-3A53-4ADA-AEB0-042AEFC01889}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Recur", "Recur\Recur.vcxproj", "{4D21BD83-0EB3-499F-BEAE-BA8BB9C6B2E0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "String", "String\String.vcxproj", "{ACF32C59-12D6-4E05-9CC6-2998396E5413}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -131,6 +133,14 @@ Global
 		{4D21BD83-0EB3-499F-BEAE-BA8BB9C6B2E0}.Release|x64.Build.0 = Release|x64
 		{4D21BD83-0EB3-499F-BEAE-BA8BB9C6B2E0}.Release|x86.ActiveCfg = Release|Win32
 		{4D21BD83-0EB3-499F-BEAE-BA8BB9C6B2E0}.Release|x86.Build.0 = Release|Win32
+		{ACF32C59-12D6-4E05-9CC6-2998396E5413}.Debug|x64.ActiveCfg = Debug|x64
+		{ACF32C59-12D6-4E05-9CC6-2998396E5413}.Debug|x64.Build.0 = Debug|x64
+		{ACF32C59-12D6-4E05-9CC6-2998396E5413}.Debug|x86.ActiveCfg = Debug|Win32
+		{ACF32C59-12D6-4E05-9CC6-2998396E5413}.Debug|x86.Build.0 = Debug|Win32
+		{ACF32C59-12D6-4E05-9CC6-2998396E5413}.Release|x64.ActiveCfg = Release|x64
+		{ACF32C59-12D6-4E05-9CC6-2998396E5413}.Release|x64.Build.0 = Release|x64
+		{ACF32C59-12D6-4E05-9CC6-2998396E5413}.Release|x86.ActiveCfg = Release|Win32
+		{ACF32C59-12D6-4E05-9CC6-2998396E5413}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
