@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Cout_Hello.cpp">
+    <ClCompile Include="Cout_DecOctHex.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
