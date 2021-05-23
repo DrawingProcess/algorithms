@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="For_Iteration.cpp">
+    <ClCompile Include="For_MeanFreq.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
