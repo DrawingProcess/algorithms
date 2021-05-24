@@ -19,7 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Cout\Cout_Reverse.cpp" />
     <ClCompile Include="Sort_Nearest0.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
