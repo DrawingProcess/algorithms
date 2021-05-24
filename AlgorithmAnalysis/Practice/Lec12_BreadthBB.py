@@ -61,7 +61,6 @@ def compBound(u):
             result += ((W - totweight) * p[k] / w[k])
     return result
 
-        
 n=4
 W=16
 p=[40,30,50,10]
