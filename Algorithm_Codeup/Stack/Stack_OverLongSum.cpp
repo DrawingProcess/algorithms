@@ -21,10 +21,11 @@ int main() {
 		while (pre == 1 && a.size() > a.size() - b.size() - 1 - cnt) {
 			num = a[a.size() - b.size() - 1 - cnt] - '0' + pre;
 			if (num >= 10) {
-				a[a.size() - b.size() - 1 - cnt] += pre - 10 ;
+				a[a.size() - b.size() - 1 - cnt] += pre - 10;
 				pre = 1;
 			}
 			else {
+				a[a.size() - b.size() - 1 - cnt] += pre;
 				pre = 0;
 			}
 			cnt++;
@@ -52,6 +53,7 @@ int main() {
 				pre = 1;
 			}
 			else {
+				b[b.size() - a.size() - 1 - cnt] += pre;
 				pre = 0;
 			}
 			cnt++;
