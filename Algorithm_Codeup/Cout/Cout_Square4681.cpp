@@ -6,5 +6,5 @@ int main() {
 		cin >> num;
 		sum += num * num;
 	}
-	cout << sum / 10;
+	cout << sum % 10;
 }
