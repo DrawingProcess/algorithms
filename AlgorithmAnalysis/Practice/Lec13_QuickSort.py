@@ -20,7 +20,6 @@ def partition(s,low,high):
     s[pivotPoint]=temp
     return pivotPoint
 
-
 s=[3,5,2,9,10,14,4,8]
 quickSort(s,0,7)
 print(s)
