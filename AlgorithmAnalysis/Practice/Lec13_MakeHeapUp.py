@@ -1,3 +1,5 @@
+# 방법1: 데이터가 입력되는 순서대로 heap을 매번 구성
+
 import math
 class Heap(object):
     n=0
