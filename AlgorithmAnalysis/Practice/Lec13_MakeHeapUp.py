@@ -6,6 +6,17 @@ class Heap(object):
     def __init__(self, data):
         self.data=data
         self.n=len(self.data)-1
+    
+    def siftUp(self, i):
+        if i == 0:
+            return
+        child = self.data[i]
+        parentpos = int(math.floor((i-1)/2))
+        parent = self.data[parentpos]
+        if not parent < child:
+            self.data[parentpos] = child
+            self.data[i] = parent
+            self.siftUp(parentpos)
 
     def siftDown(self,i):
         siftkey = self.data[i]
@@ -13,7 +24,7 @@ class Heap(object):
         spotfound = False
         while(2*parent <= self.n and not spotfound):
             if(2*parent < self.n and self.data[2*parent] < self.data[2*parent+1]):
-                largerchild = 2*parent +1
+                largerchild = 2*parent + 1
             else:
                 largerchild = 2*parent
             if(siftkey < self.data[largerchild]):
@@ -21,28 +32,26 @@ class Heap(object):
                 parent = largerchild
             else:
                 spotfound = True
+                
         self.data[parent] = siftkey
-     
-    def makeHeap2(self):
-        for i in range(int(self.n/2), 0,-1):
-            self.siftDown(i)
 
     def root(self):
         if(self.n>0):
             keyout = self.data[1]
             self.data[1] = self.data[self.n]
             self.n = self.n - 1
-            self.siftDown(1)   
+            self.siftDown(1)  
         return keyout
+     
+    def makeHeap1(self):
+        for i in range(int(self.n/2), 0,-1):
+            self.siftDown(i)
     
     def removeKeys(self):
         result = []
         for i in range(self.n,0,-1):
-             result.append(self.root()) #?
-            
+            result.append(self.root())
         return result
-        
-
           
 def heapSort(a):
     h = Heap(a)

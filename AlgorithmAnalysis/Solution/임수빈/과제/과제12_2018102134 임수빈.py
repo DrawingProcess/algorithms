@@ -42,7 +42,6 @@ class Heap(object):
             self.siftDown(i)
 
 
-
     def root(self):
         if(self.n>0):
 # 추가 하였음. 힙 이 더 이상없을 때는 down 없음
