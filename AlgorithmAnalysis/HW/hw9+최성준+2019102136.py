@@ -7,17 +7,17 @@ class Heap(object):
     def __init__(self, data):
         self.data=data
         self.n=len(self.data)-1
-    
+        
     def siftUp(self, i):
-        if i == 0:
-            return
-        child = self.data[i]
-        parentpos = int(math.floor((i-1)/2))
-        parent = self.data[parentpos]
-        if not parent < child:
-            self.data[parentpos] = child
-            self.data[i] = parent
-            self.siftUp(parentpos)
+        while (i >= 2):
+            parentpos = i//2
+            if self.data[parentpos] > self.data[i]:
+                return self.data[i]
+            temp = self.data[i]
+            self.data[i] = self.data[parentpos]
+            self.data[parentpos] = temp
+            i = parentpos
+        return self.data[i]
 
     def siftDown(self,i):
         siftkey = self.data[i]
@@ -45,8 +45,8 @@ class Heap(object):
         return keyout
      
     def makeHeap1(self):
-        for i in range(int(self.n/2), 0,-1):
-            self.siftDown(i)
+        for i in range(1, self.n + 1):
+            self.siftUp(i)
     
     def removeKeys(self):
         result = []

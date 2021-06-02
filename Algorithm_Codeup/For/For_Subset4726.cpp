@@ -11,9 +11,6 @@ int main() {
 	}
 	for (int i = 0; i < num; i++) {
 		for (int j = i; j < con + i; j++) {
-			if (con + i == num) {
-				continue;
-			}
 			sum[i] += arr[j];
 		}
 		if (con + i == num) {
