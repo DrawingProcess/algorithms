@@ -1,11 +1,10 @@
 def promising(i,col):
     k = 0
     switch = True
-    while(k < i and switch):
+    while k < i and switch:
         if col[i] == col[k] or abs(col[i] - col[k]) == i-k:
             switch = False
         k += 1
-        
     return switch
 
 def queens(n,i,col):
