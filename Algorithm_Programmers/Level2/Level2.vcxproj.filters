@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Level2_순위검색.cpp">
+    <ClCompile Include="Level2_후보키.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
