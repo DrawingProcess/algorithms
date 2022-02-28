@@ -60,32 +60,7 @@ long long solution(string expression) {
 
     return answer;
 }
-//// 문제를 잘못이해함..
-//long long solution(string expression) {
-//    long long answer = 0, result = 0;
-//    vector<int> num;
-//    string oper;
-//    int operIndex = 0;
-//    for (int i = 0; i < expression.size(); i++) {
-//        if (i == expression.size() - 1) num.push_back(stoi(expression.substr(operIndex, i - operIndex + 1)));
-//        if (expression[i] == '-' || expression[i] == '+' || expression[i] == '*') {
-//            num.push_back(stoi(expression.substr(operIndex, i - operIndex)));
-//            oper.push_back(expression[i]);
-//            operIndex = i + 1;
-//        }
-//    }
-//    sort(oper.begin(), oper.end());
-//    do {
-//        result = num[0];
-//        for (int i = 0; i < oper.size(); i++) {
-//            if (oper[i] == '+') result += num[i+1];
-//            else if (oper[i] == '-') result -= num[i + 1];
-//            else if (oper[i] == '*') result *= num[i + 1];
-//        }
-//        answer = max(answer, abs(result));
-//    } while (next_permutation(oper.begin(), oper.end()));
-//    return answer;
-//}
+
 int main() {
     string expression = "100-200*300-500+20";
     //result: 60420
