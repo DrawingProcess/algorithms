@@ -31,14 +31,14 @@ string solution(int n, int t, int m, int p)
     {
         result += trans(i, n);
     }
-    for (int i = p - 1; i < result.length(), cnt < t; i += m)
+    for (int i = 0; i < t; i++)
     {
-        answer += result[i];
-        cnt++;
+        answer += result[i * m + p - 1];
     }
     return answer;
 }
 
-int main(){
+int main()
+{
     cout << solution(2, 4, 2, 1);
 }

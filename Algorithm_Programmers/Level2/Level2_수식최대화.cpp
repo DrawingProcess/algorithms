@@ -17,13 +17,15 @@ long long solution(string expression) {
         if (expression[i] == '+' || expression[i] == '-' || expression[i] == '*')
         {
             num.push_back(stoi(n));
-            n = "";
+            n.clear();
             if (find(exp.begin(), exp.end(), expression[i]) == exp.end())
                 exp.push_back(expression[i]);
             location.push_back(expression[i]);
         }
         else
+        {
             n += expression[i];
+        }
     }
 
     num.push_back(stoi(n));
