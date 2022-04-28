@@ -11,7 +11,8 @@ public:
     Marine();
     Marine(int x, int y);
     Marine(int x, int y, const char* marine_name);
-  ~Marine();
+    ~Marine();
+    Marine(const Marine &ma);
 
     int attack();
     void be_attacked(int damage_earn);
@@ -43,6 +44,16 @@ Marine::Marine(int x, int y, const char* name){
     coord_y = y;
     damage = 5;
     is_dead = false;
+}
+Marine::Marine(const Marine &ma) {
+    
+    name = new char[strlen(ma.name) + 1];
+    strcpy(name, ma.name);
+    hp = ma.hp;
+    coord_x = ma.coord_x;
+    coord_y = ma.coord_y;
+    damage = ma.damage;
+    is_dead = ma.is_dead;
 }
 Marine::~Marine(){
     if (name != NULL){
