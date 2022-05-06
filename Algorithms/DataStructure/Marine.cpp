@@ -1,6 +1,7 @@
 #include <iostream>
 
 class Marine {
+    static int total_marine_num;
     int hp;
     int coord_x, coord_y;
     int damage;
@@ -20,13 +21,10 @@ public:
 
     void show_status();
 }
-Marine::Marine(){
-    hp = 50;
-    coord_x = coord_y = 0;
-    damage = 5;
-    is_dead = false;
-    name = NULL;
-}
+int Marine::total_marine_num = 0;
+
+Marine::Marine() 
+    : hp(50), coord_x(0), coord_y(0), damage(5), is_dead(false), name(NULL) {}
 Marine::Marine(int x, int y){
     hp = 50;
     coord_x = x;
