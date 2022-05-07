@@ -1,39 +1,39 @@
 #include <iostream>
 
-class Marine {
+class Marine
+{
     static int total_marine_num;
     int hp;
     int coord_x, coord_y;
     int damage;
     bool is_dead;
-    char* name;
+    char *name;
 
 public:
     Marine();
     Marine(int x, int y);
-    Marine(int x, int y, const char* marine_name);
+    Marine(int x, int y, int default_damage);
+    Marine(int x, int y, const char *marine_name);
     ~Marine();
     Marine(const Marine &ma);
 
-    int attack();
-    void be_attacked(int damage_earn);
+    int attack() const;
+    Marine &be_attacked(int damage_earn);
     void move(int x, int y);
 
     void show_status();
-}
+};
 int Marine::total_marine_num = 0;
 
-Marine::Marine() 
-    : hp(50), coord_x(0), coord_y(0), damage(5), is_dead(false), name(NULL) {}
-Marine::Marine(int x, int y){
-    hp = 50;
-    coord_x = x;
-    coord_y = y;
-    damage = 5;
-    is_dead = false;
-    name = NULL;
-}
-Marine::Marine(int x, int y, const char* name){
+Marine::Marine()
+    : hp(50), coord_x(0), coord_y(0), damage(5), is_dead(false), name(NULL) { total_marine_num++; }
+Marine::Marine(int x, int y)
+    : hp(50), coord_x(x), coord_y(y), damage(5), is_dead(false), name(NULL) { total_marine_num++; }
+Marine::Marine(int x, int y, int default_damage)
+    : hp(50), coord_x(x), coord_y(x), damage(default_damage), is_dead(false), name(NULL) { total_marine_num++; }
+
+Marine::Marine(int x, int y, const char *marine_name)
+{
     name = new char[strlen(marine_name) + 1];
     strcpy(name, marine_name);
 
@@ -42,54 +42,70 @@ Marine::Marine(int x, int y, const char* name){
     coord_y = y;
     damage = 5;
     is_dead = false;
+    total_marine_num++;
 }
-Marine::Marine(const Marine &ma) {
-    
+Marine::Marine(const Marine &ma)
+{
     name = new char[strlen(ma.name) + 1];
     strcpy(name, ma.name);
+
     hp = ma.hp;
     coord_x = ma.coord_x;
     coord_y = ma.coord_y;
     damage = ma.damage;
     is_dead = ma.is_dead;
 }
-Marine::~Marine(){
-    if (name != NULL){
+Marine::~Marine()
+{
+    std::cout << name << " 의 소멸자 호출 !\n";
+    if (name != NULL)
+    {
         delete[] name;
     }
+    total_marine_num--;
+    std::cout << "남은 Marine의 수는?" << total_marine_num << "\n ";
 }
 
-void Marine::move(int x, int y) {
-  coord_x = x;
-  coord_y = y;
+void Marine::move(int x, int y)
+{
+    coord_x = x;
+    coord_y = y;
 }
-int Marine::attack() { return damage; }
-void Marine::be_attacked(int damage_earn) {
-  hp -= damage_earn;
-  if (hp <= 0) is_dead = true;
+int Marine::attack() const { return damage; }
+Marine &Marine::be_attacked(int damage_earn)
+{
+    hp -= damage_earn;
+    if (hp <= 0)
+        is_dead = true;
+
+    return *this;
 }
-void Marine::show_status() {
-  std::cout << " *** Marine *** " << std::endl;
-  std::cout << " Location : ( " << coord_x << " , " << coord_y << " ) "
-            << std::endl;
-  std::cout << " HP : " << hp << std::endl;
+void Marine::show_status()
+{
+    std::cout << " *** Marine *** " << std::endl;
+    std::cout << " Location : ( " << coord_x << " , " << coord_y << " ) "
+              << std::endl;
+    std::cout << " HP : " << hp << std::endl;
+    std::cout << " 현재 총 마린 수 : " << total_marine_num << std::endl;
 }
 
-int main() {
-    Marine* marines[100];
-    marines[0] = new Marine(2, 3);
-    marines[1] = new Marine(2, 3);
-
+int main()
+{
+    Marine *marines[100];
+    marines[0] = new Marine(2, 3, "Marine 2");
     marines[0]->show_status();
+
+    marines[1] = new Marine(1, 5, "Marine 1");
     marines[1]->show_status();
-    
-    std::cout << std::endl << "마린 1 이 마린 2 를 공격! " << std::endl;
-    
+
+    std::cout << std::endl
+              << "마린 1 이 마린 2 를 공격! " << std::endl;
+
     marines[0]->be_attacked(marines[1]->attack());
-    
+
     marines[0]->show_status();
     marines[1]->show_status();
-    
+
     delete marines[0];
     delete marines[1];
 }
