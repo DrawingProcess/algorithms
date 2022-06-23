@@ -27,7 +27,7 @@ public:
 MyString::MyString(char c, int n){
     len = n;
     str = new char[len + 1];
-    for (i = 0; i < len; i++)
+    for (int i = 0; i < len; i++)
     {
         str[i] = c;
     }
