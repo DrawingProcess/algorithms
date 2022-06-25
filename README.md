@@ -1,2 +1,2 @@
 # algorithms
-algorithms
+study algorithms
