@@ -1,22 +1,33 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-
+  // IntelliSense를 사용하여 가능한 특성에 대해 알아보세요.
+  // 기존 특성에 대한 설명을 보려면 가리킵니다.
+  // 자세한 내용을 보려면 https://go.microsoft.com/fwlink/?linkid=830387을(를) 방문하세요.
+  "version": "0.2.0",
+  "configurations": [
       {
-        "name": "clang++ - Build and debug active file",
-        "type": "lldb",
-        "request": "launch",
-        "program": "Debug/${fileBasenameNoExtension}",
-        "args": [],
-        "stopAtEntry": true,
-        "cwd": "${workspaceFolder}",
-        "environment": [],
-        "externalConsole": false,
-        "MIMode": "lldb",
-        "preLaunchTask": "clang++ build active file"
+          "type": "cppdbg",
+          "preLaunchTask": "clang++ build active file",
+          "request": "launch",
+          "name": "Debug",
+          // TODO: 실행파일수정
+          "program": "${workspaceFolder}/Debug/${fileBasenameNoExtension}",
+          // TODO: 실행 옵션 수정
+          "args": [ 
+              // "--gtest_filter=store.*" 
+          ],
+          "cwd": "${workspaceFolder}",
+          "environment": [],
+          "externalConsole": false,
+          "MIMode": "gdb",
+          // "stopAtEntry": true,
+          "setupCommands": [
+              {
+                  "description": "gdb에 자동 서식 지정 사용",
+                  "text": "-enable-pretty-printing",
+                  "ignoreFailures": true
+              }
+          ],
+          "miDebuggerPath": "/bin/gdb"
       }
-    ]
+  ]
 }

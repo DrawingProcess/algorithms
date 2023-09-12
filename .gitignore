@@ -5,6 +5,9 @@ Algorithm_BaekjoonSol/*/*
 # # Unignore all dirs
 !Algorithm_BaekjoonSol/*/*/
 
+Debug/*
+!Debug/.gitkeep
+
 *.DS_Store
 
 ## Ignore Visual Studio temporary files, build results, and
@@ -424,5 +427,3 @@ MigrationBackup/
 *.code-workspace
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,c++
-
-Debug/
