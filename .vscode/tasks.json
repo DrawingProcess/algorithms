@@ -20,14 +20,29 @@
                 "rm exist build file"
             ],
             "dependsOrder": "sequence",
-            "command": "/usr/bin/g++",
-            "args": [
-                "-g",
-                "${file}",
-                "-o",
-                // "${fileDirname}/${fileBasenameNoExtension}"
-                "${workspaceFolder}/Debug/${fileBasenameNoExtension}"
-            ],
+
+            // "windows" for Windows, "linux" for Linux, and "osx" for macOS.
+            "linux":{
+                "command": "/usr/bin/g++",
+                "args": [
+                    "-g",
+                    "${file}",
+                    "-o",
+                    "Debug/${fileBasenameNoExtension}"
+                    // "${fileDirname}/${fileBasenameNoExtension}"
+                ],
+            },
+            "osx":{
+                "command": "/usr/bin/clang++",
+                "args": [
+                    "-std=c++17",
+                    "-stdlib=libc++",
+                    "-g",
+                    "${file}",
+                    "-o",
+                    "Debug/${fileBasenameNoExtension}"
+                ],
+            },
             "options": {
 				"cwd": "${workspaceFolder}"
             },

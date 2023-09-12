@@ -5,29 +5,34 @@
   "version": "0.2.0",
   "configurations": [
       {
-          "type": "cppdbg",
           "preLaunchTask": "clang++ build active file",
           "request": "launch",
-          "name": "Debug",
-          // TODO: 실행파일수정
+          "name": "Build and debug active file",
+          "type": "cppdbg",
+          
+          // "windows" for Windows, "linux" for Linux, and "osx" for macOS.
+          "linux": {
+            "MIMode": "gdb",
+            "miDebuggerPath": "/bin/gdb"
+          },
+          "osx": {
+            "MIMode": "lldb"
+          },
+          "cwd": "${workspaceFolder}",
           "program": "${workspaceFolder}/Debug/${fileBasenameNoExtension}",
-          // TODO: 실행 옵션 수정
           "args": [ 
               // "--gtest_filter=store.*" 
           ],
-          "cwd": "${workspaceFolder}",
+          "stopAtEntry": false,
           "environment": [],
           "externalConsole": false,
-          "MIMode": "gdb",
-          // "stopAtEntry": true,
           "setupCommands": [
               {
                   "description": "gdb에 자동 서식 지정 사용",
                   "text": "-enable-pretty-printing",
                   "ignoreFailures": true
               }
-          ],
-          "miDebuggerPath": "/bin/gdb"
+          ]
       }
   ]
 }
