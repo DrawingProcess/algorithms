@@ -3,7 +3,23 @@
     "tasks": [
         {
             "type": "shell",
+            "label": "rm exist build file",
+            "command": "rm",
+            "args": [
+                "-f",
+                "${workspaceFolder}/Debug/${fileBasenameNoExtension}"
+            ],
+            "options": {
+				"cwd": "${workspaceFolder}"
+            }
+        },
+        {
+            "type": "shell",
             "label": "clang++ build active file",
+            "dependsOn": [
+                "rm exist build file"
+            ],
+            "dependsOrder": "sequence",
             "command": "/usr/bin/g++",
             "args": [
                 "-g",
